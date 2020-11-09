@@ -1,0 +1,37 @@
+security:
+    oauth2:
+      client:
+        registration:
+          custom-client:
+            client-name: auth-service
+            scope: user_info
+            provider: custom-provider
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+        provider:
+          custom-provider:
+            token-uri: http://localhost:8080/auth/oauth/token
+            authorization-uri: http://localhost:8080/auth/oauth/authorize
+            user-info-uri: http://localhost:8080/auth/user/me
+            user-name-attribute: name
+
+server:
+  port: 8081
+
+
+spring:
+    h2:
+        console:
+            enabled: true           
+    flyway:
+        baseline-on-migrate: true
+    profiles:
+        active: dev
+    datasource:
+        driver-class-name: org.h2.Driver
+        url: jdbc:h2:file:./oauthExample
+        username: sa
+        password:
+
+    
+
