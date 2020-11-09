@@ -43,23 +43,23 @@ https://github.com/jhonfre1994/oauth2-jwt-spring-boot-example.git
 
 * Datos autenticacion basica
 
-![](capturas/basic.png)
+![](capturas/basic.PNG)
 
 * Datos del usuario
 
-![](capturas/body.png)
+![](capturas/body.PNG)
 
 * Generacion de token exitoso
 
-![](capturas/token.png)
+![](capturas/token.PNG)
 
 * Credenciales incorrectas
 
-![](capturas/credenciales_malas.png)
+![](capturas/credenciales_malas.PNG)
 
 * Consumir servicio con el access_token.
 
-![](capturas/consumir_servicio.png)
+![](capturas/consumir_servicio.PNG)
 
 * Error de autorizacion para consumir un servicio sin el token.
 
