@@ -38,11 +38,11 @@ INSERT INTO oauth_client_details (client_id, client_secret, resource_ids, scope,
 	NULL, NULL, 900, 3600, '{}', NULL);
 
 INSERT INTO usuario(id_usuario,nombres, apellidos, nombre_usuario,contrasena)
-VALUES (1,'Jhon Freddy','Salamanca','jhonfre','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
+VALUES (1,'admin','admin','admin','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
 
 INSERT INTO usuario(id_usuario,nombres, apellidos, nombre_usuario,contrasena)
-VALUES (2,'Camilo','Perez','camilo','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
+VALUES (2,'user','1','user1','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
 
 INSERT INTO usuario(id_usuario,nombres, apellidos, nombre_usuario,contrasena)
-VALUES (3,'Valeria','Jaramillo','valeria','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
+VALUES (3,'user','2','user2','$2a$10$vY9SkPQrAJbUvTL6/5fvce1SBBzlDYw0YPxabcmH86B0O9vzeqire');
 
