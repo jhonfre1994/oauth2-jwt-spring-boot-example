@@ -17,12 +17,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class UsrRolDTO {
-    /**
-     * id del rol.
-     */
     private Integer idRol;
-    /**
-     * nombre del rol.
-     */
     private String nombre;
 }

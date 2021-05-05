@@ -1,6 +1,7 @@
 package com.oauth.jwt.example.security;
 
-
+import com.oauth.jwt.example.entity.UsrUsuarios;
+import com.oauth.jwt.example.repository.UsuarioRepository;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
@@ -45,6 +47,9 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     @Autowired
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private UsuarioRepository repository;
 
     public AuthServerConfig(PasswordEncoder passwordEncoder) {
         this.passwordEncoder = passwordEncoder;
@@ -95,6 +100,13 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
         @Override
         public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
             final Map<String, Object> additionalInfo = new HashMap<>();
+            if (authentication.getUserAuthentication() != null && authentication.getPrincipal() instanceof User) {
+                User user = (User) authentication.getPrincipal();
+                UsrUsuarios usr = repository.findByNombreUsuario(user.getUsername());
+                additionalInfo.put("user_id", usr.getIdUsuario());
+                additionalInfo.put("name", usr.getNombres());
+                additionalInfo.put("latsName", usr.getApellidos());
+            }
             ((DefaultOAuth2AccessToken) accessToken).setAdditionalInformation(additionalInfo);
             return super.enhance(accessToken, authentication);
         }

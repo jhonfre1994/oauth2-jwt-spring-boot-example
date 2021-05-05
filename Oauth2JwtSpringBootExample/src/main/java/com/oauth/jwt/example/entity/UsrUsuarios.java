@@ -23,7 +23,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "usuarios")
+@Table(name = "usuario")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -44,6 +44,18 @@ public class UsrUsuarios implements Serializable {
     @Basic(optional = false)
     @Column(name = "nombre_usuario")
     private String nombreUsuario;
+    
+    /**
+     * nombe del usuario.
+     */
+    @Column(name = "nombres")
+    private String nombres;
+    
+    /**
+     * nombe del usuario.
+     */
+    @Column(name = "apellidos")
+    private String apellidos;
     /**
      * contraseña del usuario.
      */

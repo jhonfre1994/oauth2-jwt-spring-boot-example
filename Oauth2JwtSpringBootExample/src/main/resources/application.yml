@@ -10,7 +10,7 @@ security:
             authorization-grant-type: authorization_code
         provider:
           custom-provider:
-            token-uri: http://localhost:8080/auth/oauth/token
+            token-uri: http://localhost:8080/auth/token
             authorization-uri: http://localhost:8080/auth/oauth/authorize
             user-info-uri: http://localhost:8080/auth/user/me
             user-name-attribute: name

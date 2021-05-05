@@ -19,20 +19,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class UsrUsuarioDTO {
 
-    /**
-     * id del usuario.
-     */
     private Integer idUsuario;
-    /**
-     * nombe del usuario.
-     */
     private String nombreUsuario;
-    /**
-     * lista de roles asociados al usuario.
-     */
     private List<UsrRolDTO> roles;
-    /**
-     * contraseña del usuario.
-     */
     private String contrasena;
+    private String nombres;
+    private String apellidos;
 }
